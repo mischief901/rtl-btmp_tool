@@ -60,7 +60,7 @@
 
 /* Stack preload process maximum retry attempts  */
 #ifndef PRELOAD_MAX_RETRY_ATTEMPTS
-#define PRELOAD_MAX_RETRY_ATTEMPTS 0
+#define PRELOAD_MAX_RETRY_ATTEMPTS 5
 #endif
 
 /*******************************************************************************
@@ -81,7 +81,7 @@ typedef struct
 BOOLEAN hci_logging_enabled = FALSE;    /* by default, turn hci log off */
 char hci_logfile[256] = HCI_LOGGING_FILENAME;
 
-BOOLEAN trace_h5_enabled = FALSE;    /* by default, turn hci log off */
+BOOLEAN trace_h5_enabled = TRUE;    /* by default, turn hci log off */
 
 /*******************************************************************************
 **  Static variables

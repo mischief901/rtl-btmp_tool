@@ -34,7 +34,9 @@
 #include "bt_syslog.h"
 
 #include "btif_api.h"
+#ifndef __FOUNDATION_H
 #include "foundation.h"
+#endif
 #include "bt_mp_base.h"
 #include "bt_mp_api.h"
 #include "gki.h"

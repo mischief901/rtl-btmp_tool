@@ -48,7 +48,7 @@
 ******************************************************************************/
 
 #ifndef USERIAL_DBG
-#define USERIAL_DBG FALSE
+#define USERIAL_DBG TRUE
 #endif
 
 #if (USERIAL_DBG == TRUE)
@@ -354,18 +354,6 @@ uint8_t userial_open(void)
                        userial_read_thread, NULL) != 0 ) {
         SYSLOGE("pthread_create failed!");
         return FALSE;
-    }
-
-    if (pthread_getschedparam(userial_cb.read_thread, &policy, &param) == 0) {
-        policy = BTHC_LINUX_BASE_POLICY;
-#if (BTHC_LINUX_BASE_POLICY!=SCHED_NORMAL)
-        param.sched_priority = BTHC_USERIAL_READ_THREAD_PRIORITY;
-#endif
-        result = pthread_setschedparam(userial_cb.read_thread, policy, &param);
-        if (result != 0) {
-            SYSLOGW("userial_open: pthread_setschedparam failed (%s)",
-                    strerror(result));
-        }
     }
 
     return TRUE;

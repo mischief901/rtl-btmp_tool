@@ -55,7 +55,7 @@
 
 /* Device port name where Bluetooth controller attached */
 #ifndef BLUETOOTH_USB_DEVICE_PORT
-#define BLUETOOTH_USB_DEVICE_PORT      "/dev/rtk_btusb"
+#define BLUETOOTH_USB_DEVICE_PORT      "/dev/bus/usb/003/002"
 #endif
 
 #ifndef BLUETOOTH_SDIO_DEVICE_PORT

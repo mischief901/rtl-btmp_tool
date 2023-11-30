@@ -255,7 +255,7 @@ int hci_bluez_read(int dd, void *pbuf, size_t plen)
 int hci_bluez_write(int dd, void *pbuf, uint16_t plen)
 {
     int ret;
-
+    write(2, pbuf, plen);
     while ((ret = write(dd, pbuf, plen)) < 0) {
         if (errno == EAGAIN || errno == EINTR)
             continue;
